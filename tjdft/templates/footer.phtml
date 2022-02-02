@@ -1,0 +1,67 @@
+<div class="barra_footer mt-5"></div>
+<footer id="portal-footer-wrapper">
+
+  <div class="container mt-5" id="portal-footer">
+    <div class="row pt-5">
+      <nav class="col-lg-6 col-sm-12 vcenter">
+
+        <a href="https://www.tjdft.jus.br/midias-sociais/facebook" target="_blank" class="icone-social facebook">facebook</a>
+        <a href="https://www.tjdft.jus.br/midias-sociais/instagram" target="_blank" class="icone-social instagram">instagram</a>
+        <a href="https://www.tjdft.jus.br/midias-sociais/youtube" target="_blank" class="icone-social youtube">youtube</a>
+        <a href="https://www.tjdft.jus.br/midias-sociais/twitter" target="_blank" class="icone-social twitter">twitter</a>
+        <a href="https://www.tjdft.jus.br/midias-sociais/flickr" target="_blank" class="icone-social flickr">flickr</a>
+        <a href="https://www.tjdft.jus.br/midias-sociais/podcast" target="_blank" class="icone-social podcast">podcast</a>
+
+
+      </nav>
+
+      <div class="col-lg-6 col-sm-12 vcenter acessos">
+        <a href="https://www.tjdft.jus.br/carta-de-servicos">
+          <span class="icone servicos"></span>
+          <span>Carta de Serviços</span>
+        </a>
+        <a href="https://www.tjdft.jus.br/transparencia/acesso-a-informacao">
+          <span class="icone informacao"></span>
+          <span>Acesso à Informação</span>
+        </a>
+      </div>
+    </div>
+    <div class="row mt-5 pt-5">
+      <div class="col-sm-12 text-center">
+        <p>TJDFT • PRAÇA MUNICIPAL • LOTE 1 • CEP 70094-900 • BRASÍLIA/DF • CNPJ 00531954/0001-20</p>
+        <p>
+          <a href="https://www.tjdft.jus.br/transparencia/protecao-de-dados-pessoais/politica-de-privacidade-do-site">Política de privacidade</a> • <a href="https://www.tjdft.jus.br/transparencia/protecao-de-dados-pessoais/termo-de-uso">Termo de
+            uso</a>
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+<!-- Contador -->
+
+<script>
+const counters = document.querySelectorAll('.value');
+const speed = 200;
+
+counters.forEach( counter => {
+ const animate = () => {
+    const value = +counter.getAttribute('akhi');
+    const data = +counter.innerText;
+
+    const time = value / speed;
+   if(data < value) {
+        counter.innerText = Math.ceil(data + time);
+        setTimeout(animate, 1);
+      }else{
+        counter.innerText = value;
+      }
+
+ }
+
+ animate();
+});
+</script>

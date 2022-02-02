@@ -1,0 +1,54 @@
+<?php
+  // Set page title.
+  $this->headTitle($this->translate('Search Home'));
+
+  // Disable top search box -- this page has a special layout.
+  $this->layout()->searchbox = false;
+
+  // Set default value if necessary:
+  if (!isset($this->searchClassId)) {
+    $this->searchClassId = 'Solr';
+  }
+
+  $this->layout()->breadcrumbs = false;
+?>
+
+
+  <div>
+    <div class="row mb-4 mt-5">
+        <div class="col-12 text-center">
+          <h1 class="mb-5 pr-3 pl-3">Explore o conteúdo da nossa rede</h1>
+          <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search"  aria-label="Pesquisar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          </form> -->
+          <div class="text-center vcenter pr-5 pl-5">
+            <?=$this->context($this)->renderInContext("search/searchbox.phtml", ['ignoreHiddenFilterMemory' => true])?>
+          </div>
+
+        </div>
+    </div>
+    <div class="row mb-4 desktop">
+      <div class="col-12 text-center">
+        <span><a href="Search/Advanced" class="mr-2 text-tjdft">Busca avançada</a> | <a href="Search/History" class="ml-2 mr-2 text-tjdft">Histórico de buscas</a> | <a href="Help/Home?topic=search" class="ml-2 text-tjdft">Dicas de busca</a></span>
+      </div>
+    </div>
+    <div class="row p-3 text-center" style="background-color: #2e3133">
+      <div class="col-lg-3 com-sm-12 mb-2 mt-2">
+        <span class="value text-white font-weight-bold" akhi="127.306">0</span><span class="text-tjdft ml-2">Documentos</span>
+      </div>
+      <div class="col-lg-3 com-sm-12 mb-2 mt-2">
+        <span class="value text-white font-weight-bold" akhi="37.985">0</span><span class="text-tjdft ml-2">Artigos</span>
+      </div>
+      <div class="col-lg-3 com-sm-12 mb-2 mt-2">
+        <span class="value text-white font-weight-bold" akhi="11.859">0</span><span class="text-tjdft ml-2">Livros</span>
+      </div>
+      <div class="col-lg-3 com-sm-12 mb-2 mt-2">
+        <span class="value text-white font-weight-bold" akhi="69.772">0</span><span class="text-tjdft ml-2">Atos Normativos</span>
+      </div>
+    </div>
+  </div>
+
+
+
+<?=implode('', array_map([$this, 'contentBlock'], $blocks ?? []))?>
