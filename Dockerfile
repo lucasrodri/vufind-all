@@ -6,6 +6,7 @@ ENV TZ=America/Sao_Paulo
 RUN apt-get update && \
     apt-get install -y vim tzdata apache2 libapache2-mod-php php-mbstring php-pear php php-dev php-gd php-intl php-json php-ldap php-mysql php-xml php-soap php-curl default-jdk php-pgsql && \
     a2enmod rewrite && \
+    a2enmod headers && \
     ln -s /usr/local/vufind/local/httpd-vufind.conf /etc/apache2/conf-enabled/vufind.conf && \
     sh -c 'echo export JAVA_HOME=\"/usr/lib/jvm/default-java\" > /etc/profile.d/vufind.sh' && \
     sh -c 'echo export VUFIND_HOME=\"/usr/local/vufind\"  >> /etc/profile.d/vufind.sh' && \
